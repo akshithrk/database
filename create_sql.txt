@@ -1,0 +1,126 @@
+create table customer(
+customer_id varchar(10) not null primary key,
+first_name varchar(20) not null,
+last_name varchar(20) not null,
+address varchar(100) not null,
+city varchar(50) not null,
+state varchar(20) not null,
+zip numeric(12) not null,
+phone numeric(12) not null
+);
+create table plan(
+plan_id varchar(20) not null primary key,
+plan_desc varchar(50) not null,
+plan_price varchar(50) not null,
+plan_rentatime varchar(20) not null,
+plan_maxrental varchar(50) not null
+);
+create table membership(
+enroll_id varchar(20) not null primary key,
+customer_id varchar(20) not null,
+foreign key (customer_id) references customers(customer_id),
+plan_id varchar(20) not null,
+foreign key (plan_id) references plan(plan_id),
+membership_name varchar(20) not null,
+membership_date date not null,
+membership_status varchar(20) not null
+);
+create table payment(
+payment_id varchar(20) not null primary key,
+customer_id varchar(20) not null,
+foreign key (customer_id) references customers(customer_id),
+payment_desc varchar(50) not null,
+payment_price varchar(20) not null,
+payment_tax varchar(20) not null,
+payment_total varchar(20) not null,
+payment_date date
+);
+create table genre(
+genre_id varchar(20) not null primary key,
+genre_type varchar(20) not null,
+gebre_desc varchar(100) not null
+);
+create table director(
+director_id varchar(20) not null primary key,
+director_firstname varchar(20) not null,
+director_lastname varchar(20) not null
+);
+
+create table movie(
+movie_id varchar(20) not null primary key,
+genre_id varchar(20) not null,
+foreign key (genre_id)references genre(genre_id),
+director_id varchar(20) not null,
+foreign key (director_id)references director(director_id),
+crew_id varchar(20) not null,
+movie_title varchar(50) not null,
+release_date date not null
+);
+create table inventory(
+movie_id varchar(20) not null primary key,
+foreign key (movie_id)references movie(movie_id),
+quantity_available numeric(20) not null,
+quantity_rented numeric(20) not null,
+quantity_total numeric(20) not null
+);
+create table crew(
+crew_id varchar(20) not null primary key,
+movie_id varchar(20) not null,
+foreign key (movie_id)references movie(movie_id),
+actor_id varchar(20) not null
+);
+create table actor(
+actor_id varchar(20) not null primary key,
+actor_firstname varchar(20) not null,
+actor_lastname varchar(20) not null,
+crew_id varchar(20) not null,
+foreign key (crew_id)references crew(crew_id)
+);
+create table rental(
+rental_id varchar(20) not null primary key,
+movie_id varchar(20) not null,
+foreign key (movie_id)references movie(movie_id),
+customer_id varchar(20) not null,
+foreign key (customer_id) references customers(customer_id),
+rental_request_date date not null,
+rental_status varchar(100) not null
+);
+create table rental_not_returned(
+rental_id varchar(20) not null primary key,
+foreign key (rental_id)references rental(rental_id),
+movie_id varchar(20) not null,
+foreign key (movie_id)references movie(movie_id),
+customer_id varchar(20) not null,
+foreign key (customer_id) references customers(customer_id),
+rental_date date not null
+);
+create table rental_history(
+rental_id varchar(20) not null primary key,
+foreign key (rental_id)references rental(rental_id),
+movie_id varchar(20) not null,
+foreign key (movie_id)references movie(movie_id),
+customer_id varchar(20) not null,
+foreign key (customer_id) references customers(customer_id),
+rental_date date not null,
+rental_status varchar(50),
+return_date date,
+rental_condition varchar(200)
+);
+create table shipping(
+rental_id varchar(20) not null primary key,
+foreign key (rental_id)references rental(rental_id),
+movie_id varchar(20) not null,
+foreign key (movie_id)references movie(movie_id),
+customer_id varchar(20) not null,
+foreign key (customer_id) references customers(customer_id),
+rental_date date not null
+);
+create table que(
+customer_id varchar(20) not null,
+foreign key (customer_id) references customers(customer_id),
+movie_id varchar(20) not null,
+foreign key (movie_id)references movie(movie_id),
+rental_id varchar(20) not null primary key,
+foreign key (rental_id)references rental(rental_id),
+priority_level numeric(10)
+);

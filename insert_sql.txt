@@ -1,0 +1,277 @@
+insert into customers(customer_id, first_name, last_name, address, city, state, zip, phone)
+values('C1', 'Akshith', 'Kandakatla', '241 Freeman St', 'Brookline', 'MA', 02446, 7035057165);
+insert into customers(customer_id, first_name, last_name, address, city, state, zip, phone)
+values('C2', 'Akshitha', 'Surapaneni', '240 Freeman St', 'Beuceline', 'MA', 02446, 7035057166);
+insert into customers(customer_id, first_name, last_name, address, city, state, zip, phone)
+values('C3', 'Prachi', 'Kabra', '10 linden st', 'Boston', 'MA', 23446, 7035544365);
+insert into customers(customer_id, first_name, last_name, address, city, state, zip, phone)
+values('C4', 'Santanu', 'B', '241 Freeman St', 'Brookline', 'MA', 02446, 6178036799);
+insert into customers(customer_id, first_name, last_name, address, city, state, zip, phone)
+values('C5', 'Sri', 'Gangidi', '11 Janpath', 'Ashburn', 'DC', 02446, 9872345716);
+insert into customers(customer_id, first_name, last_name, address, city, state, zip, phone)
+values('C6', 'Rishi', 'Saxena', '241 Freeman St', 'Brookline', 'MA', 02446, 6170017165);
+insert into customers(customer_id, first_name, last_name, address, city, state, zip, phone)
+values('C7', 'Abdul', 'Rahman', '501 Alwal', 'Hyderabad', 'TG', 500010, 9985900800);
+insert into customers(customer_id, first_name, last_name, address, city, state, zip, phone)
+values('C8', 'Andrew', 'Kristian', '2234 Babcock St', 'Brookline', 'MA', 02236, 3399856465);
+insert into customers(customer_id, first_name, last_name, address, city, state, zip, phone)
+values('C9', 'Steve', 'Jobs', '100 Elm street', 'Buffalo', 'NY', 02446, 7456056765);
+insert into customers(customer_id, first_name, last_name, address, city, state, zip, phone)
+values('C10', 'Tim', 'cook', '241 Paulo blvd', 'Paulo Alto', 'CA', 04566, 9999999999);
+
+insert into plan(plan_id, plan_desc, plan_price, plan_rentatime, plan_maxrental)
+values('P1', '1 at a time', '$6.99 per month', '2 at a time', '4 per month');
+insert into plan(plan_id, plan_desc, plan_price, plan_rentatime, plan_maxrental)
+values('P2', '2 at a time', '$11.99 per month', '1 at a time', '4 per month');
+insert into plan(plan_id, plan_desc, plan_price, plan_rentatime, plan_maxrental)
+values('P3', '3 at a time', '$17.99 per month', '3 at a time', 'Unlimited');
+
+insert into membership(enroll_id, customer_id, plan_id, membership_name, membership_date, membership_status)
+values('M1', 'C1', 'P1', 'Economy', cast('20-JAN-2009' as date), 'Active');
+insert into membership(enroll_id, customer_id, plan_id, membership_name, membership_date, membership_status)
+values('M2', 'C2', 'P2', 'Silver', cast('19-JAN-2009' as date), 'Active');
+insert into membership(enroll_id, customer_id, plan_id, membership_name, membership_date, membership_status)
+values('M3', 'C3', 'P3', 'Gold', cast('12-DEC-2014' as date), 'Active');
+insert into membership(enroll_id, customer_id, plan_id, membership_name, membership_date, membership_status)
+values('M4', 'C3', 'P3', 'Gold', cast('20-FEB-2013' as date), 'Active');
+insert into membership(enroll_id, customer_id, plan_id, membership_name, membership_date, membership_status)
+values('M5', 'C4', 'P2', 'Silver', cast('20-MAR-2012' as date), 'Active');
+insert into membership(enroll_id, customer_id, plan_id, membership_name, membership_date, membership_status)
+values('M6', 'C5', 'P2', 'Silver', cast('20-APR-2011' as date), 'Active');
+insert into membership(enroll_id, customer_id, plan_id, membership_name, membership_date, membership_status)
+values('M7', 'C6', 'P3', 'Gold', cast('20-SEP-2010' as date), 'Not Active');
+insert into membership(enroll_id, customer_id, plan_id, membership_name, membership_date, membership_status)
+values('M8', 'C7', 'P2', 'Silver', cast('20-AUG-2008' as date), 'Not Active');
+insert into membership(enroll_id, customer_id, plan_id, membership_name, membership_date, membership_status)
+values('M9', 'C8', 'P1', 'Economy', cast('20-FEB-2009' as date), 'Active');
+insert into membership(enroll_id, customer_id, plan_id, membership_name, membership_date, membership_status)
+values('M10', 'C9', 'P3', 'Gold', cast('20-NOV-2007' as date), 'Active');
+
+insert into payment(payment_id, customer_id, payment_desc, payment_price, payment_tax, payment_total, payment_date)
+values('000', 'C1', 'paid', '$100', '15%', '$115', cast('9-SEP-2012' as date));
+
+insert into genre (genre_id, genre_type, gebre_desc)
+values ('G1', 'Thriller', 'Thriller movie');
+insert into genre (genre_id, genre_type, gebre_desc)
+values ('G2', 'Sci-Fi', 'Science fiction movie');
+insert into genre (genre_id, genre_type, gebre_desc)
+values ('G3', 'Comedy', 'Comedy movie makes you laugh');
+insert into genre (genre_id, genre_type, gebre_desc)
+values ('G4', 'Drama', 'These are dramatic movies');
+insert into genre (genre_id, genre_type, gebre_desc)
+values ('G5', 'Misc', 'Movies that are of more than one genre');
+insert into genre (genre_id, genre_type, gebre_desc)
+values ('G6', 'Biography', 'Movies based on biography');
+insert into genre (genre_id, genre_type, gebre_desc)
+values ('G7', 'History', 'Movies based on History');
+insert into genre (genre_id, genre_type, gebre_desc)
+values ('G8', 'Romantic', 'These are romantic');
+insert into genre (genre_id, genre_type, gebre_desc)
+values ('G9', 'Horror', 'That scare you');
+insert into genre (genre_id, genre_type, gebre_desc)
+values ('G10', 'Fantacy', 'Movies of some fantasy');
+
+insert into director (director_id, director_firstname, director_lastname)
+values ('D1', 'George', 'Lucas');
+insert into director (director_id, director_firstname, director_lastname)
+values ('D2', 'Rich', 'Christiano');
+insert into director (director_id, director_firstname, director_lastname)
+values ('D3', 'Guy', 'Ritchie');
+insert into director (director_id, director_firstname, director_lastname)
+values ('D4', 'Christopher', 'Nolan');
+insert into director (director_id, director_firstname, director_lastname)
+values ('D5', 'Peter', 'Jackson');
+insert into director (director_id, director_firstname, director_lastname)
+values ('D6', 'James', 'Cameron');
+insert into director (director_id, director_firstname, director_lastname)
+values ('D7', 'David', 'Fincher');
+insert into director (director_id, director_firstname, director_lastname)
+values ('D8', 'Quentin', 'Tarantino');
+insert into director (director_id, director_firstname, director_lastname)
+values ('D9', 'Tony', 'Gilroy');
+insert into director (director_id, director_firstname, director_lastname)
+values ('D10', 'Antony', 'Stanton');
+
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie1', 'G1', 'D1', 'Cr1','Star Wars', cast('16-NOV-2012' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie2', 'G7', 'D1', 'Cr2','Raiders of the lost ark',cast('25-DEC-2011' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie3', 'G2', 'D1', 'Cr3','Willow',cast('21-DEC-2011' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie4', 'G7', 'D1', 'Cr4','Indiana Jones and the Kingdom of the Crystal Skull',cast('22-MAY-2008' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie5', 'G7', 'D2', 'Cr5','A Matter of Faith',cast('01-JUL-2010' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie6', 'G9', 'D2', 'Cr6','Amazing Love',cast('13-JUN-2008' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie7', 'G10', 'D2', 'Cr7','Time Changer',cast('21-JUL-2006' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie8', 'G8', 'D3', 'Cr8','Snatch',cast('19-JAN-2000' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie9', 'G8', 'D3', 'Cr9','Lock, Stock and Two Smoking Barrels',cast('05-MAR-1999' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie10', 'G2', 'D3', 'Cr10','RocknRolla',cast('31-OCT-2008' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie11', 'G2', 'D3', 'Cr11','Sherlock Holmes',cast('25-DEC-2009' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie12', 'G2', 'D3', 'Cr12','Sherlock Holmes: A Game of Shadows',cast('16-DEC-2011' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie13', 'G5', 'D4', 'Cr13','Following',cast('05-NOV-1999' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie14', 'G6', 'D4', 'Cr14','Memento',cast('11-OCT-2000' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie15', 'G6', 'D4', 'Cr15','Insomnia',cast('24-MAY-2002' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie16', 'G2', 'D4', 'Cr16','Batman Begins',cast('15-JUNE-2005' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie17', 'G6', 'D4', 'Cr17','The Prestige',cast('20-OCT-2006' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie18', 'G2', 'D4', 'Cr18','The Dark Knight',cast('18-JUL-2008' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie19', 'G2', 'D4', 'Cr19','The Dark Knight Rises',cast('20-JUL-2010' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie20', 'G2', 'D4', 'Cr20','Inception',cast('16-JUL-2010' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie21', 'G3', 'D5', 'Cr21','The Lord of the Rings: The Fellowship of the Ring',cast('19-DEC-2001' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie22', 'G10', 'D5', 'Cr22','The Lord of the Rings: The Two Towers',cast('16-DEC-2002' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie23', 'G10', 'D5', 'Cr23','The Lord of the Rings: The Return of the King',cast('17-DEC-2003' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie24', 'G2', 'D6', 'Cr24','Avatar',cast('18-DEC-2009' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie25', 'G2', 'D7', 'Cr25','Fight Club',cast('15-OCT-1999' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie26', 'G2', 'D8', 'Cr26','Die Hard',cast('15-JUL-1988' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie27', 'G2', 'D8', 'Cr27','Predator',cast('12-JUNE-1987' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie28', 'G5', 'D9', 'Cr28','The Bourne Identity',cast('14-JUN-2002' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie29', 'G4', 'D9', 'Cr29','The Bourne Supremacy',cast('23-JUL-2004' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie30', 'G4', 'D9', 'Cr30','The Bourne Ultimatum',cast('03-AUG-2007' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie31', 'G5', 'D10', 'Cr31','Finding Nemo',cast('03-SEP-2003' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie32', 'G3', 'D10', 'Cr32','Wall E',cast('11-DEC-2008' as date));
+insert into movie (movie_id, genre_id, director_id, crew_id, movie_title, release_date)
+values ('Movie33', 'G3', 'D10', 'Cr33','Finding dory',cast('17-JUN-2016' as date));
+
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q2','Movie2','C4',cast('13-JAN-2013' as date),'Rent');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q3','Movie4','C2',cast('21-JAN-2013' as date),'Rent');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q4','Movie11','C3',cast('01-JAN-2013' as date),'Que');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q5','Movie12','C4',cast('04-JAN-2013' as date),'Rent');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q6','Movie15','C6',cast('26-JAN-2013' as date),'Que');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q7','Movie18','C5',cast('23-JAN-2013' as date),'Que');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q8','Movie19','C6',cast('11-FEB-2013' as date),'Rent');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q9','Movie20','C7',cast('11-MAR-2013' as date),'Rent');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q11','Movie30','C8',cast('01-MAR-2013' as date),'Que');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q12','Movie25','C2',cast('12-MAR-2013' as date),'Que');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q13','Movie27','C3',cast('14-MAR-2013' as date),'Rent');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q14','Movie2','C4',cast('21-MAR-2013' as date),'Que');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q15','Movie30','C4',cast('30-MAR-2013' as date),'Que');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q16','Movie9','C3',cast('27-FEB-2013' as date),'Rent');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q17','Movie10','C7',cast('23-APR-2013' as date),'Rent');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q18','Movie9','C7',cast('21-MAY-2013' as date),'Que');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q19','Movie5','C9',cast('11-MAY-2013' as date),'Rent');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q20','Movie20','C1',cast('31-MAY-2013' as date),'Rent');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q21','Movie23','C10',cast('31-JUN-2013' as date),'Que');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q22','Movie28','C1',cast('31-JUN-2013' as date),'Que');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q23','Movie29','C3',cast('31-JUL-2013' as date),'Que');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q24','Movie3','C2',cast('31-JUL-2013' as date),'Que');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q25','Movie1','C1',cast('31-JUL-2013' as date),'Que');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q26','Movie7','C1',cast('11-APR-2013' as date),'Que');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q27','Movie8','C1',cast('11-AUG-2013' as date),'Que');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q28','Movie9','C1',cast('01-SEP-2013' as date),'Que');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q29','Movie10','C1',cast('12-JAN-2014' as date),'Rent');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q30','Movie11','C1',cast('31-MAR-2014' as date),'Rent');
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q31','Movie13','C1',cast('11-FEB-2014' as date),'Que');
+
+
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q3','Movie4','C2',cast('21-JAN-2013' as date),'Rent', cast('28-JAN-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q4','Movie11','C3',cast('01-JAN-2013' as date),'Que', cast('08-JAN-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q5','Movie12','C4',cast('04-JAN-2013' as date),'Rent', cast('11-JAN-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q6','Movie15','C6',cast('26-JAN-2013' as date),'Que', cast('31-JAN-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q7','Movie18','C5',cast('23-JAN-2013' as date),'Que', cast('30-JAN-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q8','Movie19','C6',cast('11-FEB-2013' as date),'Rent', cast('18-FEB-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q9','Movie20','C7',cast('11-MAR-2013' as date),'Rent', cast('18-MAR-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q11','Movie30','C8',cast('01-MAR-2013' as date),'Que', cast('8-MAR-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q12','Movie25','C2',cast('12-MAR-2013' as date),'Que', cast('19-MAR-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q13','Movie27','C3',cast('14-MAR-2013' as date),'Rent', cast('21_MAR-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q14','Movie2','C4',cast('21-MAR-2013' as date),'Que', cast('28-MAR-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q15','Movie30','C4',cast('30-MAR-2013' as date),'Que', cast('1-ARP-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q16','Movie9','C3',cast('27-FEB-2013' as date),'Rent', cast('1-MAR-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q17','Movie10','C7',cast('23-APR-2013' as date),'Rent', cast('1-MAY-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q18','Movie9','C7',cast('21-MAY-2013' as date),'Que', cast('28-MAY-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q19','Movie5','C9',cast('11-MAY-2013' as date),'Rent', cast('18-MAY-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q20','Movie20','C1',cast('31-MAY-2013' as date),'Rent', cast('2-JUN-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q21','Movie23','C10',cast('31-JUN-2013' as date),'Que', cast('7-JUL-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q22','Movie28','C1',cast('31-JUN-2013' as date),'Que', cast('7-JUL-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q23','Movie29','C3',cast('31-JUL-2013' as date),'Que', cast('7-JUL-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q24','Movie3','C2',cast('31-JUL-2013' as date),'Que', cast('17-JUL-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q25','Movie1','C1',cast('31-JUL-2013' as date),'Que', cast('17-JUL-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q26','Movie7','C1',cast('11-APR-2013' as date),'Que', cast('17-APR-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q27','Movie8','C1',cast('11-AUG-2013' as date),'Que', cast('17-AUG-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q28','Movie9','C1',cast('01-SEP-2013' as date),'Que', cast('17-SEP-2013' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q29','Movie10','C1',cast('12-JAN-2014' as date),'Rent', cast('17-JAN-2014' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q30','Movie11','C1',cast('31-MAR-2014' as date),'Rent', cast('1-APR-2014' as date), 'good');
+insert into rental_history (rental_id, movie_id, customer_id, rental_date, rental_status, return_date, rental_condition)
+values ('Q31','Movie13','C1',cast('11-FEB-2014' as date),'Que', cast('17-FEB-2014' as date), 'good');

@@ -1,0 +1,95 @@
+USECASE: 1
+select * from movie;
+
+select movie_title, director_lastname from movie join director on movie.director_id = director.director_id 
+where director_lastname = 'Lucas' or director_lastname = 'Christiano';
+
+USECASE: 2
+select c.FIRST_NAME || c.LAST_NAME as Customer_Name,
+p.PLAN_DESC as Current_Plan
+from 
+plan p,
+customers c, 
+membership m
+where 1=1
+and c.customer_id=m.CUSTOMER_ID
+and p.PLAN_ID=m.PLAN_ID
+and m.MEMBERSHIP_STATUS = 'Active';
+
+USECASE: 3
+drop trigger add_movie_priority;
+create or replace
+trigger add_movie_priority
+after insert on que
+for each row
+begin
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values (:new.rental_id, :NEW.movie_id, :new.movie_id, sysdate, 'priority');
+end;
+
+insert into rental (rental_id, movie_id, customer_id, rental_request_date, rental_status)
+values ('Q2', 'Movie2', 'C2', sysdate, 'priority');
+
+select * from rental;
+
+select * from que;
+
+USECASE: 4
+select movie_title as movie_not_rented from movie
+where movie_id not in (select distinct movie_id from rental_history
+where customer_id = 'C1' and rental_status = 'Rent');
+
+select * from customers;
+
+USECASE: 5
+create or replace
+trigger dvd_replacement_fee
+after insert or update on rental_not_returned
+for each row
+begin
+insert into payment (payment_id, customer_id, payment_desc, payment_price, payment_tax, payment_total, payment_date)
+values (:NEW.rental_id, :NEW.customer_id, 'DVD Replacement fee', '$25', '$2', '$27', sysdate);
+end;
+
+insert into rental_not_returned (rental_id, customer_id, movie_id, rental_date)
+values ('Q2', 'C4', 'Movie9', sysdate);
+
+select * from payment;
+
+USECASE: 6
+update membership set membership_status='Not Active'
+where customer_id = 'C3';
+
+select * from rental_history where customer_id = 'C3';
+
+USECASE: 7
+select movie_title, quantity_available as sold_out
+from movie where quantity_available='0';
+
+USECASE: 8
+select plan_id, plan_desc, plan_rentatime as dvd_allowed_per_month, plan_maxrental, cnt from (
+select a.plan_id, a.plan_desc, a.plan_rentatime, a.plan_maxrental, count(*) cnt  from 
+plan a, membership b
+where a.plan_id = b.plan_id
+group by  a.plan_id, a.plan_desc, a.plan_rentatime, a.plan_maxrental order by count(*) desc
+) where rownum =1;
+
+select * from membership;
+
+USECASE: 9
+select distinct a.first_name, b.movie_title,count(*) as number_of_rentals
+from customers a, movie b, rental_history c
+where c.movie_id = b.movie_id
+and a.customer_id = c.customer_id
+group by a.first_name, b.movie_title
+having count(*) > 1 order by number_of_rentals desc;
+
+USECASE: 10
+select movie_title, count(*) number_of_diff_customers
+from ( select distinct first_name||' '||last_name as name, b.movie_title
+from customers a, movie b, rental_history c
+where c.movie_id = b.movie_id
+and a.customer_id = c.customer_id order by b.movie_title asc)
+group by movie_title
+order by number_of_diff_customers;
+
